@@ -1,4 +1,7 @@
 %% Run this to produce iminfo and voxelized meshes on the training subset. Randomly permutes and subsamples the voxel matrix as well
+% Uses some code from Jrock08's repo, plus ThirdParty libraries (for Jrock08's code to run), as well as /Library/Util/Voxelize,
+% to perform the complex mesh->voxelization process, which navigates the intricate file structure to find the 
+% depth maps, camera viewing angle, etc for the iminfo struct beyond our scope.
 close all
 
 %% User configurable variables
