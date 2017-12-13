@@ -16,11 +16,15 @@ CLASS = [TRAIN_DATA 'NovelClass'];
 MODEL = [TRAIN_DATA 'NovelModel'];
 VIEW = [TRAIN_DATA 'NovelView'];
 
-% Add libraries
-addpath([RECONSTRUCT_DIR 'ThirdParty\IO']) % for camera functions
-addpath([RECONSTRUCT_DIR 'ThirdParty\JRock']) % Voxel/Mesh related high-level code
-addpath([RECONSTRUCT_DIR 'ThirdParty\toolbox_graph']) % for 'read_mesh()' function
-addpath([RECONSTRUCT_DIR 'ThirdParty\Voxelize\mesh2voxel']) % for 'polygon2voxel()' function
+%{ 
+Add libraries:
+IO - reading files
+GLCamera - camera funcitons 
+JRock - high-level code by jrock08
+toolbox_graph - for read_mesh()
+Voxelie - for polygon2voxel() 
+%}
+addpath(genpath([RECONSTRUCT_DIR 'ThirdParty'])) % Generate all subfolder paths and add
 
 %% Begin voxelize program. Modeled off of 'Main/train_RF.m' lines 63:76 --------------------------------------
 % Create iminfo structs. Warnings are due to training subset not containing all images (as expected). Ignore.
