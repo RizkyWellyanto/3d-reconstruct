@@ -47,7 +47,10 @@ def tree_train(X, Y, entropy_feature, opts):
     return model
 
 
-def extract_feature(images, fixed_coords, match_coords):
+def extract_feature(images):
+    fixed_coords = np.random.rand((2, 500))
+    match_coords = np.random.rand((4, 500))
+
     # Extract randomly sampled silhouette feature from images
     feature = np.zeros((len(images), fixed_coords.shape[1] + match_coords.shape[1]))
     background = 255
