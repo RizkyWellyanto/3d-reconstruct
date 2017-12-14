@@ -51,6 +51,9 @@ def discretize_entropy_features(entropy_features):
 
     return discrete_entropy_features
 
+# This is just for convenience
+def get_discretized_entropy_features(data):
+    return discretize_entropy_features(get_entropy_features(data))
 
 # this is just for debugging purposes
 data = scipy.io.loadmat("sampleVoxels.mat")
