@@ -1,0 +1,22 @@
+JRock config with SKLearn Random Forest:
+
+Testing depth maps: 300
+Training depth maps: 1800
+
+RandomForestClassifier:
+n_estimators=5,
+max_depth=200,
+random_state=0,
+criterion='entropy',
+max_leaf_nodes=5,
+min_samples_leaf=2
+
+Results:
+DeskLamp_aligned = 16 / 25
+Door_aligned = 1 / 50
+Guitar_aligned = 3 / 50
+RectangleTable_aligned = 19 / 50
+Spoon_aligned = 7 / 50
+
+Note: There are 40+ classes; the values shown here are just
+N_correct / N_TOTAL for each class of testing images.

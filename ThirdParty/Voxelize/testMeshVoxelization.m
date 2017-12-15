@@ -2,9 +2,8 @@ clear all
 close all
 clc
 %% Read the vertices from the .off mesh file format files
-filepath=['C:\Users\Tanmay Gupta\Dropbox\UIUC\RA\Shape and Material from Single Image\Dataset\Mesh_Pairs\Mug_Mug'];
-filepath=['C:\Users\unFearing\Documents\UIUC Senior Year\CS 445\3d-reconstruct\data\mesh_data_cvpr15\Train2Subset\NovelClass\Bird_aligned'];
-[vertices, faces] = read_mesh([filepath '\D00089_out.off']);
+filepath=['C:\Users\unFearing\Documents\UIUC Senior Year\CS 445\3d-reconstruct\data\mesh_data_cvpr15\'];
+[vertices, faces] = read_mesh([filepath 'Train2Subset\NovelModel\Spoon_aligned\D00014_out.off']);
 
 minCoord = min(min(vertices));
 maxCoord = max(max(vertices));
@@ -34,7 +33,7 @@ centerOfMass(3,1) = mean(Z)/s + minCoord;
 %% visualization 1
 figure, plot3(X/s + minCoord -centerOfMass(1,1),Y/s + minCoord-centerOfMass(2,1),Z/s + minCoord-centerOfMass(3,1),'.');
 axis equal;
-figure, plot3(vertices(1,:) - centerOfMass(1,1),vertices(2,:)-centerOfMass(2,1),vertices(3,:)-centerOfMass(3,1),'.');
+figure, plot3(vertices(1,:) - centerOfMass(1,1),vertices(2,:)-centerOfMass(2,1),vertices(3,:)-centerOfMass(3,1),'r.');
 axis equal;
 xlabel('x');
 ylabel('y');
